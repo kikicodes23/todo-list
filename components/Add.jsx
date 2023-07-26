@@ -9,12 +9,14 @@ export function Add({ setTasks, setTasksCopy, currentFilter }) {
     function handleSubmit(e) {
         e.preventDefault();
 
+        if(task === "") return
+
         const newTask = {
             id: uuidv4(),
             title: task,
             completed: false
         }
-
+        
         setTasks(prev => [
             ...prev,
             newTask
